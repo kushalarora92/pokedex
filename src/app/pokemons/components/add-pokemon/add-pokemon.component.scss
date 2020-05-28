@@ -1,0 +1,26 @@
+.add-pokeomon-container {
+
+  .form-group {
+    margin: 0.5rem 0;
+    margin-left: 15%;
+
+    input {
+      width: 70%;
+      line-height: 22px;
+    }
+
+    .is-invalid {
+      border-left: 5px solid #dc3545;
+    }
+    
+    .is-valid {
+      border-left: 5px solid #28a745;
+    }
+
+    .invalid-feedback {
+      color: #dc3545;
+      font-size: small;
+    }
+  }
+
+}

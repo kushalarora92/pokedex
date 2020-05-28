@@ -1,0 +1,17 @@
+<div class="pokemon-list-container">
+  <div class="nav">
+    <button class="btn float-right add-pokemon-button" (click)="onAddPokemonClick()">+</button>
+    <h1 class="text-center">Pokemons List</h1>
+  </div>
+  
+  <ng-container *ngIf="pokemons">
+    <pokemon-list
+      [list]="pokemons"
+      (onPokemonClick)="onPokemonClick($event)"
+      (onPokemonDeleteClick)="onPokemonDeleteClick($event)"></pokemon-list>
+  </ng-container>
+</div>
+
+<util-custom-modal [title] = "'Add New Pokemon'" [isVisible] = "isModalVisible" (onModalCloseClick)="onModalCloseClick()">
+  <add-pokemon (onPokemonAdd)="onPokemonAdd($event)"></add-pokemon>
+</util-custom-modal>

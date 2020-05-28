@@ -1,0 +1,57 @@
+<div class="add-pokeomon-container">
+  <form [formGroup]="addPokemonForm" (ngSubmit)="onFormSubmitClick()">
+    <div class="form-group">
+      <input placeholder="Pokemon name" type="text" formControlName="name" [ngClass]="{'is-invalid': submitted && f.name.errors}" />
+      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+        <div *ngIf="f.name.errors.required">Name is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input placeholder="Image Url" type="text" formControlName="imgUrl" [ngClass]="{'is-invalid': submitted && f.imgUrl.errors}" />
+      <div *ngIf="submitted && f.imgUrl.errors" class="invalid-feedback">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input placeholder="HP Value" type="number" formControlName="hp" [ngClass]="{'is-invalid': submitted && f.hp.errors}" />
+      <div *ngIf="submitted && f.hp.errors" class="invalid-feedback">
+        <div *ngIf="f.hp.errors.required">HP is required</div>
+        <div *ngIf="f.hp.errors.min">Min value can be 0</div>
+        <div *ngIf="f.hp.errors.max">Max value can be 100</div>
+        <div *ngIf="f.hp.errors.patter">Not a number </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input placeholder="Attack Value" type="number" formControlName="attack" [ngClass]="{'is-invalid': submitted && f.attack.errors}" />
+      <div *ngIf="submitted && f.attack.errors" class="invalid-feedback">
+        <div *ngIf="f.attack.errors.required">Attack is required</div>
+        <div *ngIf="f.attack.errors.min">Min value can be 0</div>
+        <div *ngIf="f.attack.errors.max">Max value can be 100</div>
+        <div *ngIf="f.attack.errors.patter">Not a number </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input placeholder="Defence Value" type="number" formControlName="defense" [ngClass]="{'is-invalid': submitted && f.defense.errors}" />
+      <div *ngIf="submitted && f.defense.errors" class="invalid-feedback">
+        <div *ngIf="f.defense.errors.required">Defence is required</div>
+        <div *ngIf="f.defense.errors.min">Min value can be 0</div>
+        <div *ngIf="f.defense.errors.max">Max value can be 100</div>
+        <div *ngIf="f.defense.errors.patter">Not a number </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input placeholder="Types" type="text" formControlName="types" [ngClass]="{'is-invalid': submitted && f.types.errors}" />
+      <div *ngIf="submitted && f.types.errors" class="invalid-feedback">
+        <div *ngIf="f.types.errors.required">Types are required</div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button class="btn" type="submit">Submit</button>
+    </div>
+  </form>
+</div>

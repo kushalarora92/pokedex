@@ -1,0 +1,15 @@
+<util-custom-modal *ngIf="isModalVisible" [title]="selectedPokemon.name" [isVisible] = "isModalVisible" (onModalCloseClick)="onModalCloseClick()">
+  <view-pokemon [pokemon]="selectedPokemon" (onPokemonDeleteClick)="_onPokemonDeleteClick($event)"></view-pokemon>
+</util-custom-modal>
+
+<div class="pokemon-list-container">
+  <ng-container *ngIf="list">
+    <div class="pokemon-container" *ngFor="let item of list; index as i; trackBy: trackByFn">
+      <pokemon-list-item [item]="item" (click)="_onPokemonClick(item, i)"></pokemon-list-item>
+    </div>
+  </ng-container>
+
+  <!-- <div class="load-more">
+    <button type="button" class="btn load-more-button">Load More</button>
+  </div> -->
+</div>
